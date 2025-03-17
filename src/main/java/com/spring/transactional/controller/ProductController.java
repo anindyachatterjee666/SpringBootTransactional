@@ -15,7 +15,7 @@ public class ProductController {
 
 
     @PostMapping("/saveProduct")
-    public void saveProuct(){
+    public void saveProuct() throws Exception {
         productService.saveInfo();
     }
 }
