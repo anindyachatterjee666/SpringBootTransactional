@@ -26,5 +26,19 @@ public class ProductService {
                 throw new RuntimeException("Error occured for id: " + product.getId());
             }
         }
-    }
+    } // Transaction will be committed
 }
+
+
+/*
+
+AOP - Aspect Oriented Programming -> we generally write non-functional code in the aop
+Aspect {
+    1. start the Transaction
+    2. call your method
+    3. commit Transaction
+    4. close the connection
+}
+
+in the code -> Spring AOP is calling the saveInfo() through a Proxy class.
+ */
