@@ -4,6 +4,7 @@ import com.spring.transactional.entity.Products;
 import com.spring.transactional.repository.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -13,7 +14,7 @@ public class ProductService {
     ProductRepo productRepo;
     Products product = new Products();
 
-    @Transactional(noRollbackFor = RuntimeException.class)
+    @Transactional(propagation = Propagation.REQUIRED)
     public void saveInfo() throws Exception {
         for (int i = 1; i <= 10; i++) {
             product.setId(i);
@@ -140,4 +141,6 @@ Note ->
         }
     } // Transaction will be committed
 
+
+6. @Transactional(propagation = Propagation.REQUIRED) -> It always starts a new Transaction incase a Transaction doesn't exist. If it exists it uses the same one.
  */

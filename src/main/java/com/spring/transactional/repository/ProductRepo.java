@@ -12,6 +12,7 @@ public class ProductRepo {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+//    @Transactional // -> here it won't create new Transaction. It will use the same Transaction created in service class.
     public void saveProduct(Products products){
 
         // First, check if the product with the given id exists
