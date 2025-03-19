@@ -142,5 +142,6 @@ Note ->
     } // Transaction will be committed
 
 
-6. @Transactional(propagation = Propagation.REQUIRED) -> It always starts a new Transaction incase a Transaction doesn't exist. If it exists it uses the same one.
+6. @Transactional(propagation = Propagation.REQUIRED) -> It always starts a new Transaction in-case a Transaction           doesn't exist. If it exists it uses the same one.
+     If no transaction
  */
