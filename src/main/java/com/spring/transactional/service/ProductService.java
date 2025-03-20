@@ -123,7 +123,7 @@ Note ->
         }
     } // Transaction will be committed
 
-5. If we want there should not be any rollBack for the RuntimeException so we should use @Transactional(noRollbackFor = RuntimeException.class)
+5. If we want there should not be any rollBack for the RuntimeException, so we should use @Transactional(noRollbackFor = RuntimeException.class)
 
     CodeExample ->
     @Transactional(noRollbackFor = RuntimeException.class)
@@ -144,4 +144,8 @@ Note ->
 
 6. @Transactional(propagation = Propagation.REQUIRED) -> It always starts a new Transaction in-case a Transaction           doesn't exist. If it exists it uses the same one.
      If no transaction
+
+7. @Transactional(propagation = Propagation.NEW) -> It suspends an active Transaction, if any. Create a new Transaction and execute the code under it.
+
+8.
  */
