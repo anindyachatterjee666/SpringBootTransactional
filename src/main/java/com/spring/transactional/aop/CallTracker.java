@@ -12,7 +12,6 @@ public class CallTracker {
 
     @Pointcut("within(com..service.*) || within(com..repository.*)")
     public void logMethodPointCut(){
-
     }
 
 //    @Before("logMethodPointCut()")
